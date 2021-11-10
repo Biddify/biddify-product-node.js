@@ -1,0 +1,1 @@
+biddify-product-node.js
