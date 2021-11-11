@@ -1,4 +1,4 @@
-require('dotenv').config({path: '../.env'}); //{path: '../.env'}
+require('dotenv').config(); //{path: '../.env'}
 module.exports = {
   development: {
     username: process.env.DB_USER,
@@ -6,7 +6,7 @@ module.exports = {
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT,
+    dialect: "mysql",
   },
   "test": {
     "username": "root",
