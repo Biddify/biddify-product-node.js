@@ -4,23 +4,23 @@ module.exports = {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT
+    host    : process.env.DB_HOST,
+    port    : process.env.DB_PORT,
+    dialect : process.env.DB_DIALECT
   },
-  "test": {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT
+  test: {
+    username: process.env.DB_TEST_USER,
+    password: process.env.DB_TEST_PASSWORD,
+    database: process.env.DB_TEST_DATABASE,
+    host    : process.env.DB_TEST_HOST,
+    port    : process.env.DB_TEST_PORT,
+    dialect : process.env.DB_TEST_DIALECT
   },
-  "production": {
-    "username": "root",
+  production: {
+    "username": null,
     "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "database": null,
+    "host"    : null,
+    "dialect" : null
   }
 };

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  biddify-product-database:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=biddify
+    networks:
+      - biddify
+    volumes:
+      - ./sql-scripts:/docker-entrypoint-initdb.d
+
+networks:
+  biddify:
