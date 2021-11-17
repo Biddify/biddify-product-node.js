@@ -1,16 +1,17 @@
-name: Sonar-Cloud Workflow
+name: SonarCloud
 
 on:
-  pull:
-    branches:
-      - master
+  pull_request:
+    branches: [ master ]
 
 jobs:
+
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone Repository
+      - name: Check Out Repo
       - uses: actions/checkout@v2
+
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:

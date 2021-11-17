@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  build:
+  docker:
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo 
