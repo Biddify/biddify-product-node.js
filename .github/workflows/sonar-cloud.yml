@@ -8,6 +8,16 @@ jobs:
 
   sonarcloud:
     runs-on: ubuntu-latest
+    env:
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_DATABASE: ${{ secrets.DB_DATABASE }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      DB_DIALECT: mysql
+      PORT: ${{ secrets.PORT }}
+      DB_DIALECT_TEST: ${{ secrets.DB_DIALECT_TEST }}
+      
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v2
