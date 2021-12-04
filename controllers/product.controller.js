@@ -2,7 +2,7 @@ const db = require("../models");
 const Product = db.products;
 
 exports.create = (req, res) => {
-    if (!req.body.title) {
+    if (!req.body.title || !req.body.description) {
         res.status(400).send({
             message: "Content can not be empty!"
         });
