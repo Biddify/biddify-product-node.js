@@ -7,35 +7,28 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: 
-        DB_HOST: ${{ secrets.DB_HOST }}
-        DB_USER: ${{ secrets.DB_USER }}
-        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-        DB_DATABASE: ${{ secrets.DB_DATABASE }}
-        DB_PORT: ${{ secrets.DB_PORT }}
-        DB_DIALECT: mysql
-        PORT: ${{ secrets.PORT }}
-        DB_DATABASE_TEST: ${{ secrets.DB_DATABASE_TEST }}
-        
+    env:
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      DB_DATABASE: ${{ secrets.DB_DATABASE }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      DB_DIALECT: mysql
+      PORT: ${{ secrets.PORT }}
+      DB_DIALECT_TEST: ${{ secrets.DB_DIALECT_TEST }}
+
     strategy:
       fail-fast: false
       matrix:
         node-version: [14.x]
-        
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm install
-    - run: npm run build --if-present
-    - run: docker-compose up -d biddify-product-database
-    - name: Sleep for 120 seconds
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '120s'
-    - run: npm test
-    
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm test
