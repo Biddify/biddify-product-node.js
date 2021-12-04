@@ -12,9 +12,10 @@ describe('US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik de
         expect(res.statusCode).toEqual(201)
 
         expect(res.body).toHaveProperty('id')
-        expect(res.body).toHaveProperty('title')
+        expect(res.body.title).toEqual("Test")
         expect(res.body).toHaveProperty('description')
         expect(res.body).toHaveProperty('updatedAt')
+        expect(res.body).toHaveProperty('createdAt')
         expect(res.body).toHaveProperty('createdAt')
     })
 
