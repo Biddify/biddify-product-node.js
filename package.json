@@ -35,6 +35,7 @@
     "jest-sonar-reporter": "^2.0.0",
     "sequelize-cli": "^6.3.0",
     "sqlite3": "^5.0.2",
+    "standard": "^16.0.4",
     "supertest": "^6.1.6"
   },
   "jest": {
@@ -43,6 +44,11 @@
     "testResultsProcessor": "jest-sonar-reporter",
     "coveragePathIgnorePatterns": [
       "/node_modules/",
+      "/test/"
+    ]
+  },
+  "standard": {
+    "ignore": [
       "/test/"
     ]
   }

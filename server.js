@@ -1,28 +1,28 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express')
+const cors = require('cors')
 
-const app = express();
+const app = express()
 
-var corsOptions = {
-    origin: "http://localhost:3001"
-};
+const corsOptions = {
+  origin: 'http://localhost:3001'
+}
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions))
 
-app.use(express.json());
+app.use(express.json())
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 
-const db = require('./models');
-db.sequelize.sync();
+const db = require('./models')
+db.sequelize.sync()
 
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome! Hello World!" });
-});
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome! Hello World!' })
+})
 
-require("./routes/products.routes")(app);
+require('./routes/products.routes')(app)
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3002
 module.exports = app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}.`);
-});
+  console.log(`Server is running on port ${PORT}.`)
+})
