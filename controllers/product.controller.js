@@ -18,10 +18,11 @@ exports.create = (req, res) => {
     .then(data => {
       res.status(201).send(data)
     })
-    .catch(
-      res.status(500).send({
-        message: 'Some error occurred while creating the Product.'
-      }))
+    .catch(e => {
+        res.status(500).send({
+            message: 'Some error occurred while creating the Product.'
+        })
+    })
 }
 
 exports.findAll = (req, res) => {
@@ -29,10 +30,11 @@ exports.findAll = (req, res) => {
     .then(data => {
       res.send(data)
     })
-    .catch(
-      res.status(500).send({
-        message: 'Some error occurred while retrieving products.'
-      }))
+    .catch(e => {
+        res.status(500).send({
+            message: 'Some error occurred while retrieving products.'
+      })
+    })
 }
 
 exports.findOne = (req, res) => {
@@ -48,10 +50,11 @@ exports.findOne = (req, res) => {
         })
       }
     })
-    .catch(
-      res.status(500).send({
-        message: 'Error retrieving Product.'
-      }))
+    .catch(e => {
+        res.status(500).send({
+            message: 'Error retrieving Product.'
+        })
+    })
 }
 
 exports.update = (req, res) => {
@@ -71,10 +74,11 @@ exports.update = (req, res) => {
         })
       }
     })
-    .catch(
-      res.status(500).send({
-        message: 'Error updating Product.'
-      }))
+    .catch(e => {
+        res.status(500).send({
+            message: 'Error updating Product.'
+        })
+    })
 }
 
 exports.delete = (req, res) => {
@@ -94,8 +98,10 @@ exports.delete = (req, res) => {
         })
       }
     })
-    .catch(
+    .catch(e => {
       res.status(500).send({
-        message: 'Could not delete Product.'
-      }))
+          message: 'Could not delete Product.'
+      })
+    })
+
 }
