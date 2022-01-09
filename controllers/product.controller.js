@@ -28,7 +28,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   Product.findAll()
     .then(data => {
-      res.send(data)
+      res.status(200).send(data)
     })
     .catch(e => {
         res.status(500).send({

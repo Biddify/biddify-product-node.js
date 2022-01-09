@@ -5,6 +5,16 @@ module.exports = app => {
 
   router.post('/', products.create)
 
+  /**
+   * @swagger
+   * /products:
+   *  get:
+   *    description: Use to request all products
+   *    responses:
+   *      '200':
+   *        description: A successful response
+   */
+
   router.get('/', products.findAll)
 
   router.get('/:id', products.findOne)
@@ -13,5 +23,5 @@ module.exports = app => {
 
   router.delete('/:id', products.delete)
 
-  app.use('/api/products', router)
+  app.use('/products', router)
 }
