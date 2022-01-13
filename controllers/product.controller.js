@@ -28,7 +28,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   Product.findAll()
     .then(data => {
-      res.send(data)
+      res.status(201).send(data)
     })
     .catch(e => {
         res.status(500).send({
@@ -43,7 +43,7 @@ exports.findOne = (req, res) => {
   Product.findByPk(id)
     .then(data => {
       if (data) {
-        res.send(data)
+        res.status(201).send(data)
       } else {
         res.status(404).send({
           message: 'Cannot find Product.'
@@ -65,7 +65,7 @@ exports.update = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
+        res.status(201).send({
           message: 'Product was updated successfully.'
         })
       } else {
