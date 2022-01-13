@@ -4,7 +4,7 @@ const request = require('supertest')
 describe('US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen', () => {
   it('Correct body POST request', async () => {
     const res = await request(app)
-      .post('/api/products')
+      .post('/products')
       .send({
         title: 'Test',
         description: 'Test omschrijving'
@@ -21,7 +21,7 @@ describe('US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik de
 
   it('Incorrect body (without title) POST request', async () => {
     const res = await request(app)
-      .post('/api/products')
+      .post('/products')
       .send({
         description: 'Test omschrijving'
       })
@@ -30,7 +30,7 @@ describe('US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik de
 
   it('Incorrect body (without description) POST request', async () => {
     const res = await request(app)
-      .post('/api/products')
+      .post('/products')
       .send({
         title: 'Test'
       })
@@ -39,13 +39,13 @@ describe('US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik de
 
   it('Incorrect empty body POST request', async () => {
     const res = await request(app)
-      .post('/api/products')
+      .post('/products')
     expect(res.statusCode).toEqual(400)
   })
 
   it('Incorrect URL POST request', async () => {
     const res = await request(app)
-      .post('/api/product')
+      .post('/product')
       .send({
         title: 'Test',
         description: 'Test omschrijving'

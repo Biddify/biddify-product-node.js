@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
   <file path="D:\School\Fontys ICT\Jaar 2\Periode 3\Persoonlijk Project\Github\biddify-product-node.js\test\product.test.js">
-    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Correct body POST request" duration="232"/>
-    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect body (without title) POST request" duration="24"/>
-    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect body (without description) POST request" duration="10"/>
+    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Correct body POST request" duration="183"/>
+    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect body (without title) POST request" duration="15"/>
+    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect body (without description) POST request" duration="12"/>
     <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect empty body POST request" duration="9"/>
-    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect URL POST request" duration="11"/>
+    <testCase name="US-04 | Als verkoper, wil ik een product kunnen aanbieden, zodat ik deze kan verkopen Incorrect URL POST request" duration="12"/>
   </file>
 </testExecutions>
