@@ -37,7 +37,7 @@ module.exports = app => {
    */
 
   router.get('/:id', products.findOne)
-  
+
   /**
    * @swagger
    * /products:
