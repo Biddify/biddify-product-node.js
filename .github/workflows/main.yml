@@ -38,6 +38,9 @@ jobs:
 
   sonarcloud:
     runs-on: ubuntu-latest
+    env:
+      DB_DIALECT_TEST: ${{ secrets.DB_DIALECT_TEST }}
+      
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v2
